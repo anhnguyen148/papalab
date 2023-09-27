@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { client, mongoDBServerConnect, getMongoDB } = require("../dbHelper");
-require("dotenv").config();
 
 router.get("/", async (req, res) => {
     
@@ -19,7 +18,7 @@ router.get("/", async (req, res) => {
     } catch (e) {
         console.log(e);
     } finally {
-        await client.close();
+        // await client.close();
     }
 
 });

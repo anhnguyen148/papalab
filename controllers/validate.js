@@ -1,8 +1,8 @@
 exports.form = (req,res) => {
     const {content} = req.body;
 
-    if (content === "") {
-        return res.render("papaFrom", {
+    if (!content) {
+        return res.render("papaForm", {
             "clientVar": "You have nothing to say ..."
         })
     } else {

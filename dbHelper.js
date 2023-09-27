@@ -19,9 +19,6 @@ async function mongoDBServerConnect() {
   } catch(e) {
     console.log(e)
   } 
-  finally {
-    await client.close();
-  }
 }
 
 // connect to database and collection
@@ -30,15 +27,13 @@ async function getMongoDB() {
     client.connect; 
     const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLLECTION);
     const result = await collection.find().toArray();
-    // console.log("Result: ", result[0]["name2"]);
+    console.log("Result: ", result);
     return result; 
   }
   catch(e) {
     console.log(e)
   } 
-  finally {
-    client.close; 
-  }
 }
 
-module.exports = { mongoDBServerConnect, getMongoDB };
+
+module.exports = { client, mongoDBServerConnect, getMongoDB };

@@ -1,4 +1,4 @@
-<h1>This is Anh's November Lab</h1>
+<h1>This is <%= data.name1 %> and <%= data.name2 %>'s <%= data.pj %></h1>
 
 <form action="/post/formProcess" method="POST">     
     <label for="content">Say something about yourself:</label>     
@@ -6,4 +6,5 @@
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 
-<%= clientVar %>
+<p>Say something about yourself...</p>
+<%= data.clientVar %>
